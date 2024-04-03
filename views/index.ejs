@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= locals.title %></title>
+    <link rel="stylesheet" href="/vendor/animate.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <!-- flowbite cdn. -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+
+    <!-- <link rel="stylesheet" href="/public/css/style.css"> -->
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- header start -->
+    <%-include('partials/header'); %>
+    <!-- header end -->
+
+
+    <style>
+        
+        .typing-container {
+          display: flex;
+          align-items: center;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 0.3em;
+        height: 1.4em;
+        margin-left: 2px;
+        background-color: black;
+        animation: blink 1s infinite;
+      }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+/* this file only for costumize animate... */
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.09);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+    </style>
+<style>
+  /* Animasi */
+  @keyframes pointDown {
+    0%, 100% {
+      transform: translateY(0); /* Awal dan akhir: tidak bergerak */
+    }
+    50% {
+      transform: translateY(5px); /* Tengah: pindah ke bawah */
+    }
+  }
+
+  /* Menetapkan animasi ke emoji */
+  .pointing-down {
+    display: inline-block;
+    animation: pointDown 1s ease-in-out infinite; /* Menggunakan animasi pointDown */
+  }
+</style>
+
+<style>
+  /* Animasi */
+  @keyframes pointLeft {
+    0%, 100% {
+      transform: translateX(0); /* Awal dan akhir: tidak bergerak */
+    }
+    50% {
+      transform: translateX(-5px); /* Tengah: pindah ke kiri */
+    }
+  }
+
+  /* Menetapkan animasi ke emoji */
+  .pointing-left {
+    display: inline-block;
+    animation: pointLeft 1s ease-in-out infinite; /* Menggunakan animasi pointLeft */
+  }
+</style>
+
+    <!-- container -->
+    <div class="container mx-auto px-4 mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Tambahkan margin atas di sini -->
+      <!-- Kolom Pertama -->
+      <div class="flex flex-col">
+        <!-- Konten Teks -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            
+            <div class="typing-container">
+                <div id="typed-text" class="typing-text text-5xl font-semibold text-gray-800 mb-6"></div>
+                <span class="cursor"></span>
+            </div>
+            
+            <% const jenjangPendidikan = ["SD", "SMP", "SMA"] %>
+
+          <p class="text-gray-600">    
+
+            Website ini dapat digunakan oleh jenjang pendidikan tingkat <b><%= jenjangPendidikan.join(', ') %></b>, dan bahkan tingkat perguruan tinggi. Dengan menggunakan aplikasi ini, kita dapat mengatur secara random <span class="text-blue-600">/</span> acak kelompok mana yang akan memulai presentase.
+          </p>
+
+          <p class="text-gray-600 mt-3">
+            Mungkin terasa aneh, kenapa mesti dibuatkan aplikasi website seperti ini. mengapa tidak langsung main tunjuk pake jari <span class="pointing-down">👇</span><span class="pointing-left">👈</span> ke arah kelompok lain untuk presentase ? lebih <i>easy</i>. 
+          </p>
+
+            <div class="mt-2">
+              <a href="#sumber_inspirasi" onclick="smoothScroll(event)">
+                <button type="button" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800 animate__pulse">Sumber Inspirasi</button>
+              </a>
+            </div>
+          </div>
+      </div>
+      <!-- Kolom Kedua -->
+      <div class="flex flex-col">
+        <!-- Konten Gambar -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <img
+            src="/img/random_img.png"
+            alt="Gambar"
+            class="w-full h-auto rounded-lg"
+          />
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container border mx-auto" style="margin-top: 70px; margin-bottom: 70px;">
+      <hr>
+    </div>
+    
+
+    <div class="container mt-10 mx-auto mb-10">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 id="sumber_inspirasi" class="text-4xl font-semibold text-gray-800">Apa yang menginspirasi ?</h1>
+        
+        <div class="mt-5  flex flex-col md:flex-row">
+          <div class=" mb-5 md:mb-0 w-full md:w-1/2">
+            <p class="text-gray-600">Sumber inspirasi saya membuat aplikasi website ini adalah dosen saya sendiri. Beliau menggunakan program untuk melakukan penentuan kelompok manakah yang akan presentase terlebih dahulu tanpa menunjuk satu per satu, mana yang lebih baik atau mana yang tidak baik.</p>
+
+            <a href="#inovasi" onclick="smoothScroll(event)">
+              <button type="button" class="text-white bg-blue-700 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mt-5 ">Baca Lanjut</button>
+            </a>
+          </div>
+    
+          <div class=" mb-5 md:mb-0 w-full md:w-1/2 flex items-center justify-center">
+            <video src="video.mp4" controls width="512" height="512" class="mx-auto"></video>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <style>
+      .blue-border-top {
+        border-top: 4px solid #5166AF;
+        border-bottom: none;
+        display: inline-block;
+        padding-bottom: 10px; /* Sesuaikan dengan kebutuhan */
+      }
+    </style>
+
+    <!-- Konten A  -->
+    <div class="container mt-10 mx-auto mb-5" style="margin-top: 70px; margin-bottom: 70px;">
+      <div class="text-center">
+        <h1 class="text-5xl font-bold text-gray-800 blue-border-top">Inovasi</h1>
+        <p class="text-gray-600">Random Selection Presentation</p>
+        
+        <div id="inovasi" style="max-width: 800px; margin: 0 auto;">
+          <p class="text-justify mt-3">
+            Dengan menggunakan aplikasi Random seleksi presentase, kita dapat menghilangkan potensi favoritisme atau diskriminasi dalam proses penentuan urutan presentase. Selain itu, metode ini juga dapat memicu kreativitas dan partisipasi aktif dari setiap anggota kelompok, karena mereka harus siap untuk mempresentasekan proyek mereka tanpa memperhitungkan urutan yang sudah ditentukan sebelumnya.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <!-- konten B -->
+    <!-- Divider -->
+    <div class="container border mx-auto" style="margin-top: 70px; margin-bottom: 70px;">
+      <hr>
+    </div>
+    <!-- <div style="background: linear-gradient(to right, #5166AF 33%, transparent 33%), linear-gradient(to right, #5166AF 66%, transparent 66%), linear-gradient(to bottom, #5166AF 33%, transparent 33%), linear-gradient(to bottom, #5166AF 66%, transparent 66%); background-size: 6px 6px; height: 7px;" class="w-1/2 mx-auto"></div> -->
+
+
+
+
+    <div class="container mx-auto mt-10">
+      <div class="bg-white rounded-lg shadow-md p-6">
+        <h1 class="text-4xl font-semibold text-gray-800 mb-5">Cara Penggunaan</h1>
+
+        <div class="flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2 md:pr-5">
+            <p class="text-gray-600 mb-5 xl:w-3">Cara Penggunaan dari aplikasi seleksi random kelompok tidaklah rumit, pengguna cukup memasukkan jumlah kelompok yang ada pada kelas, lalu mengklik button <span class="capitalize whitespace-nowrap">"pilih kelompok secara acak"</span>.</p>
+
+            <a href="/seleksi">
+              <button type="button" class="text-white bg-blue-700 hover:bg-blue-900 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get Started</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+        
+  <%-include('partials/footer'); %>
+    
+
+    <script>
+      const texts = [
+        "Hi, Sobat.",
+        "Selamat datang",
+        "di website kami",
+      ]; // Teks yang akan ditampilkan
+      let count = 0; // Indeks teks yang sedang ditampilkan
+      let index = 0; // Indeks huruf dalam teks
+      let currentText = ""; // Teks yang sedang ditampilkan
+      let letter = ""; // Huruf yang sedang ditampilkan
+
+      (function type() {
+        if (count === texts.length) {
+          count = 0; // Jika semua teks telah ditampilkan, kembalikan ke teks pertama
+        }
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+
+        document.getElementById("typed-text").textContent = letter;
+        if (letter.length === currentText.length) {
+          count++;
+          index = 0;
+          setTimeout(type, 2000); // Setelah menunggu selama 2 detik, lanjutkan ke teks berikutnya
+        } else {
+          setTimeout(type, 100); // Beri jeda sebelum menampilkan huruf berikutnya
+        }
+      })();
+    </script>
+
+
+    <script>
+      function smoothScroll(event) {
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        const yOffset = -50; // Sesuaikan offset scroll jika perlu
+        const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({top: y, behavior: 'smooth'});
+      }
+    </script>
+
+    <!-- flowbite script. -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  </body>
+</html>

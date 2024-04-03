@@ -1,0 +1,30 @@
+{
+  "name": "seleksi-random-kelompok-presentasi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build-tail": "tailwindcss build -i public/vendor/tailwindcss.css -o public/css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^3.4.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.9",
+    "express": "^4.19.2",
+    "flowbite": "^2.3.0",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7"
+  }
+}

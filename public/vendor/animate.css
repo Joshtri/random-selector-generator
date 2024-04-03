@@ -1,0 +1,7 @@
+.animate__pulse {
+    display: inline-block;
+    margin: 0 0.5rem;
+    animation: pulse 2s infinite; /* Mengulangi animasi tanpa batas */
+    animation-delay: 1s; /* Jeda sebelum animasi dimulai */
+}
+
