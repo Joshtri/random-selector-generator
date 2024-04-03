@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= locals.title %></title>
-
+    <link rel="icon" href="/img/random_logo.png" />
     <!-- <link rel="stylesheet" href="/vendor/animate.css"> -->
 
     <!-- matikan sementara. -->
@@ -49,10 +49,10 @@
     </style>
     
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 animate__animated animate__fadeIn">
 
     <!-- Header -->
-    <%- include('partials/header'); %>
+    <%- include('partials/header_user'); %>
 
     <!-- Main Content -->
     <div class="container mx-auto mt-10 px-4 sm:px-6 lg:px-8 pb-10">
@@ -145,7 +145,7 @@
                                     <!-- Bagian Kanan (Teks) -->
                                     <div class="md:w-2/3 md:pl-4 md:pr-4"> <!-- menambahkan md:pr-4 untuk memberikan padding kanan -->
                                         <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400 text-justify">
-                                            Scan QR Code Saweria di samping ini untuk otomatis masuk ke halaman donasi. Atau bisa ke <a class="underline" href="https://saweria.co/yostri">https://saweria.co/yostri</a>. Bisa pakai Gopay, OVO, DANA, dan lainnya, loh.
+                                            Scan QR Code Saweria di samping ini untuk otomatis masuk ke halaman donasi. Atau bisa ke <a target="_blank" class="underline" href="https://saweria.co/yostri">https://saweria.co/yostri</a>. Bisa pakai Gopay, OVO, DANA, dan lainnya, loh.
                                         </p>
 
                                         <p class="mt-2">Donasi buat segelas <i>coffee</i> ☕️</p>
