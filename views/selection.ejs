@@ -210,11 +210,14 @@
     <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
 
     <script>
+        var totalKelompok = 0; // Variabel untuk menyimpan nilai total kelompok
+    
         function generateKelompokList(jumlahKelompok) {
+            totalKelompok = parseInt(jumlahKelompok); // Simpan nilai total kelompok
             var kelompokList = document.getElementById("kelompok-list");
             kelompokList.innerHTML = ""; // Kosongkan list sebelum menambahkan kelompok baru
-            if (!isNaN(jumlahKelompok) && jumlahKelompok > 0) {
-                for (var i = 1; i <= jumlahKelompok; i++) {
+            if (!isNaN(totalKelompok) && totalKelompok > 0) {
+                for (var i = 1; i <= totalKelompok; i++) {
                     var li = document.createElement("li");
                     li.innerHTML = "Kelompok " + i + `<i class="fa-solid fa-square-minus ml-2 text-red-500 cursor-pointer" onclick="removeKelompok(this)"></i>`;
                     kelompokList.appendChild(li);
@@ -223,12 +226,16 @@
                 kelompokList.innerHTML = "<li>Input tidak valid</li>";
             }
         }
-
+    
         function removeKelompok(element) {
             var parentLi = element.parentNode;
             parentLi.remove();
+            totalKelompok--; // Kurangi nilai total kelompok setiap kali kelompok dihapus
+            var input = document.getElementById("small-input");
+            input.value = totalKelompok; // Update nilai input dengan total kelompok yang baru
         }
     </script>
+    
 
 <script>
     function selectRandomGroup() {
