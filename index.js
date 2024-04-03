@@ -20,6 +20,8 @@ const PORT = process.env.PORT;
 app.use(express.static(__dirname + "/public"));
 
 
+// Set path views
+app.set("views", path.join(__dirname, "/views"));
 app.set('view engine', 'ejs');
 app.use('/',mainRoute, selectionRoute)
 
