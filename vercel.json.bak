@@ -4,9 +4,7 @@
     {
       "src": "./index.js",
       "use": "@vercel/node",
-      "env": {
-        "VERCEL_BUILD_TIMEOUT": 300
-      }
+      "timeout": 300
     }
   ],
   "routes": [
